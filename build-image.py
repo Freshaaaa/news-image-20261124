@@ -20,6 +20,11 @@ Layout (newspaper, Larisha-beating):
   pictures   -> 6 flat panels
   date check -> Monday's news explicitly excluded
   footer     -> markets + 12 fields + sourcing note
+
+v2 revision (main session, 24 Nov 22:1x WIB): zoom-check fixes — numbers
+captions shortened to one line, numbered pitch 24, region bars capped at
+180px, DATE CHECK wrapped to two lines, Libya ship lightened; self-check
+asserts at the end of main() guard size, dimensions and region totals.
 """
 
 import os
@@ -506,6 +511,9 @@ def main():
 
     img.save(OUT, optimize=True)
     size = os.path.getsize(OUT)
+    assert img.size == (1024, 1024), f"entry must be 1024x1024, got {img.size}"
+    assert size <= 256 * 1024, f"entry over 256 KiB: {size} bytes"
+    assert sum(REGION_TOTALS.values()) == 37, "region totals must sum to 37"
     n_stories = len(LEADS) + len(NUMBERED) + len(MORE) + 1  # +1 markets
     n_regions = len(REGION_TOTALS) + 1  # +1 markets strip
     print(f"TITLE ({len(TITLE)} chars): {TITLE}")
