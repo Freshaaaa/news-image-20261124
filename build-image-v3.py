@@ -114,7 +114,7 @@ MORE = [
     (15, "EUROPE", "Zaporizhzhia hit overnight, 2 dead"),
     (16, "EUROPE", "Germany booms, France slumps"),
     (17, "EUROPE", "Arctic cold sweeps Europe"),
-    (18, "EUROPE", "Brentford thrash Everton 4\u20130"),
+    (18, "EUROPE", "EU unveils 22nd sanctions package"),
     (19, "ASIA", "Hanoi explosion kills 6"),
     (20, "ASIA", "Hasina to return 16 December"),
     (21, "ASIA", "Taiwan votes Saturday"),
